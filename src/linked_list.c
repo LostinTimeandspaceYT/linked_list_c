@@ -43,7 +43,7 @@ bool node_remove_at(linked_list_head_t *list, unsigned int index) {
   unsigned int pos = 0;
   linked_list_foreach_safe(p, list->first) {
     pos++;
-    if (pos == (index + 1)) {
+    if (pos == index) {
       linked_list_node_t *tmp = p->next;
       p->next = p->next->next;
       free(tmp);
