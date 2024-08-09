@@ -7,4 +7,5 @@ This implementation utilizes a stack to quickly add elements to the list.
 
 ## TO-DO:
 - [X] ~~Create functions for removing elements from the linked list. `linked_list_pop()` and `linked_list_remove_at(int index)`~~.
-- [] Create functions for inserting elements into the list. `linked_list_append()` and `linked_list_insert_at(int index)`.
+- [X] ~~Create functions for inserting elements into the list. `linked_list_append()` and `linked_list_insert_at(int index)`.~~
+- [ ] Have code build on Windows and other OS.
