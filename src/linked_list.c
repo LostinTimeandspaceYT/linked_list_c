@@ -20,7 +20,7 @@ static inline void linked_list_add(linked_list_node_t *node,
   head->first = node;
 }
 
-bool node_add(linked_list_head_t *list, void *data) {
+bool node_push(linked_list_head_t *list, void *data) {
   node_t *node;
   node = malloc(sizeof(*node));
   if (!node) {
