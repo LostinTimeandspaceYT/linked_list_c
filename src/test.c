@@ -53,6 +53,22 @@ int main(void) {
   printf("\nData in node_b = %c\n", (char)node_b->data);
   free(node_b);
 
+  char a = 'a';
+  node_append(list, (void *)a);
+
+  node_t *test = malloc(sizeof(node_t *));
+  test->data = (void *)'c';
+  node_insert_at(list, (linked_list_node_t *)test, 3);
+
+  printf("\n ************* After Append and insert at 3 *************\n");
+  node_t *node3 = (node_t *)list->first;
+  while (node3) {
+    printf("Node address: %p\t", node3);
+    printf("Data: %c\n", (char)node3->data);
+    node3 = (node_t *)node3->node.next;
+  }
+  ret_val = 0;
+
 cleanup:
   linked_list_foreach_safe(p, list->first) free(p);
 

@@ -49,9 +49,12 @@ static inline void linked_list_add(linked_list_node_t *node,
                                    linked_list_head_t *head);
 
 bool node_push(linked_list_head_t *list, void *data);
-bool node_remove_at(linked_list_head_t *list, unsigned int index);
-
 node_t *node_pop(linked_list_head_t *list);
+bool node_append(linked_list_head_t *list, void *data);
+
+bool node_insert_at(linked_list_head_t *list, linked_list_node_t *node,
+                    unsigned int index);
+bool node_remove_at(linked_list_head_t *list, unsigned int index);
 
 #ifdef __cplusplus
 }
