@@ -31,6 +31,23 @@ bool node_push(linked_list_head_t *list, void *data) {
   return true;
 }
 
+/**
+ * @brief returns the first node in the list. freeing the memory is the
+ * responsibility of the callee.
+ *
+ * @param list
+ * @return node_t * to the first element.
+ */
+node_t *node_pop(linked_list_head_t *list) {
+  if (!list->first) {
+    return NULL;
+  }
+  node_t *node;
+  node = (node_t *)list->first;
+  list->first = list->first->next;
+  return node;
+}
+
 bool node_remove_at(linked_list_head_t *list, unsigned int index) {
 
   if (index == 0) {

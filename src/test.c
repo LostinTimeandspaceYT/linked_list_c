@@ -15,7 +15,7 @@ int main(void) {
 
   /* add the capital letters of the ASCII alphabet */
   for (unsigned char c = 0x5A; c > 0x40; --c) {
-    if (!node_add(list, (void *)c)) {
+    if (!node_push(list, (void *)c)) {
       goto cleanup;
     }
   }
@@ -48,6 +48,10 @@ int main(void) {
     node2 = (node_t *)node2->node.next;
   }
   ret_val = 0;
+
+  node_t *node_b = node_pop(list);
+  printf("\nData in node_b = %c\n", (char)node_b->data);
+  free(node_b);
 
 cleanup:
   linked_list_foreach_safe(p, list->first) free(p);
