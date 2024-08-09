@@ -49,6 +49,7 @@ static inline void linked_list_add(linked_list_node_t *node,
                                    linked_list_head_t *head);
 
 bool node_add(linked_list_head_t *list, void *data);
+bool node_remove_at(linked_list_head_t *list, unsigned int index);
 
 #ifdef __cplusplus
 }
